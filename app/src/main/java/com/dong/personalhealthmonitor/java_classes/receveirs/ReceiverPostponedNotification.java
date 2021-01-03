@@ -18,7 +18,7 @@ public class ReceiverPostponedNotification extends BroadcastReceiver {
         ReportDB reportDB = new ReportDB(context);
         SettingsOperations prefs = new SettingsOperations(context);
         reportDB.db.open();
-        List<Report> reports = reportDB.getReportDay(prefs.getSelectedDayMillis());
+        List<Report> reports = reportDB.getReportsDay(prefs.getSelectedDayMillis());
 
         if (reports.size() == 0) {
             Notification notification = new Notification(context);

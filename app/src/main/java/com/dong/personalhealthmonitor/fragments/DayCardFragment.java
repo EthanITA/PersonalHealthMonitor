@@ -67,7 +67,7 @@ public class DayCardFragment extends Fragment {
         adapter = new CardsAdapter(view.getContext());
         lvCards.setAdapter(adapter);
         for (Report rp :
-                rps.getReportDay(prefs.getSelectedDayMillis())) {
+                rps.getReportsDay(prefs.getSelectedDayMillis())) {
             adapter.add(rp);
         }
     }

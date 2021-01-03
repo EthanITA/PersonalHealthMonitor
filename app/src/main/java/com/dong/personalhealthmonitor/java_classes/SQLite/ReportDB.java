@@ -36,23 +36,8 @@ public class ReportDB {
 
     }
 
-    public void retrieve_report() {
-        if (report._id != null) {
-            Cursor cursor = db.fetch(report._id);
-            if (cursor.moveToNext()) {
-                report._id = cursor.getLong(cursor.getColumnIndexOrThrow(ReportsSQLHelper._ID));
-                report.day = cursor.getLong(cursor.getColumnIndexOrThrow(ReportsSQLHelper.DAY));
-                report.notes = cursor.getString(cursor.getColumnIndexOrThrow(ReportsSQLHelper.NOTES));
-                report.height = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.HEIGHT));
-                report.weight = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.WEIGHT));
-                report.temperature = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.TEMP));
-                report.blood1 = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.BLOOD1));
-                report.blood2 = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.BLOOD2));
-            }
-        }
-    }
 
-    private List<Report> get_list_report(Cursor cursor) {
+    private List<Report> getListReports(Cursor cursor) {
         List<Report> rps = new ArrayList<Report>();
         while (cursor.moveToNext()) {
             Report rp = new Report();
@@ -71,39 +56,26 @@ public class ReportDB {
         return rps;
     }
 
-    public List<Report> getReportDay(Long day) {
-        return get_list_report(db.fetchDay(day));
+    public List<Report> getReportsDay(Long day) {
+        return getListReports(db.fetchDay(day));
     }
 
     public List<Report> getAllHeight() {
 
-        return get_list_report(db.fetchContains(ReportsSQLHelper.HEIGHT));
+        return getListReports(db.fetchContains(ReportsSQLHelper.HEIGHT));
     }
 
     public List<Report> getAllWeight() {
-        return get_list_report(db.fetchContains(ReportsSQLHelper.WEIGHT));
+        return getListReports(db.fetchContains(ReportsSQLHelper.WEIGHT));
     }
 
     public List<Report> getAllTemp() {
-        return get_list_report(db.fetchContains(ReportsSQLHelper.TEMP));
+        return getListReports(db.fetchContains(ReportsSQLHelper.TEMP));
     }
 
     public List<Report> getAllBlood() {
-        return get_list_report(db.fetchContains(ReportsSQLHelper.BLOOD1));
+        return getListReports(db.fetchContains(ReportsSQLHelper.BLOOD1));
     }
 
-    public void retrieve_first() {
-        Cursor cursor = db.fetchAll();
-        if (cursor.moveToNext()) {
-            report._id = cursor.getLong(cursor.getColumnIndexOrThrow(ReportsSQLHelper._ID));
-            report.day = cursor.getLong(cursor.getColumnIndexOrThrow(ReportsSQLHelper.DAY));
-            report.notes = cursor.getString(cursor.getColumnIndexOrThrow(ReportsSQLHelper.NOTES));
-            report.height = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.HEIGHT));
-            report.weight = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.WEIGHT));
-            report.temperature = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.TEMP));
-            report.blood1 = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.BLOOD1));
-            report.blood2 = cursor.getDouble(cursor.getColumnIndexOrThrow(ReportsSQLHelper.BLOOD2));
-        }
-    }
 
 }

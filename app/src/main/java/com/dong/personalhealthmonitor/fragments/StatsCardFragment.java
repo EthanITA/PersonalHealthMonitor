@@ -302,12 +302,12 @@ public class StatsCardFragment extends Fragment {
             return reports;
         } else {
             long last_day = reports.get(0).day;
-            result.add(new AverageOfReports(reportDB.getReportDay(last_day)).getReport());
+            result.add(new AverageOfReports(reportDB.getReportsDay(last_day)).getReport());
             for (Report r :
                     reports) {
                 if (r.day != last_day) {
                     last_day = r.day;
-                    result.add(new AverageOfReports(reportDB.getReportDay(last_day)).getReport());
+                    result.add(new AverageOfReports(reportDB.getReportsDay(last_day)).getReport());
                 }
             }
         }

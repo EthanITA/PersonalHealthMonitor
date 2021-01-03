@@ -260,7 +260,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void updateDayCard() {
-        List<Report> reports = reportDB.getReportDay(prefs.getSelectedDayMillis());
+        List<Report> reports = reportDB.getReportsDay(prefs.getSelectedDayMillis());
         String totalEntries = reports.size() + " entries";
 
         AverageOfReports averageOfReports = new AverageOfReports(reports);

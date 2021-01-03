@@ -17,7 +17,7 @@ public class ReceiverDailyNotification extends BroadcastReceiver {
         ReportDB reportDB = new ReportDB(context);
         SettingsOperations prefs = new SettingsOperations(context);
         reportDB.db.open();
-        List<Report> reports = reportDB.getReportDay(prefs.getSelectedDayMillis());
+        List<Report> reports = reportDB.getReportsDay(prefs.getSelectedDayMillis());
 
         if(reports.size() == 0) {
             String totalEntries = reports.size() + " entries";
