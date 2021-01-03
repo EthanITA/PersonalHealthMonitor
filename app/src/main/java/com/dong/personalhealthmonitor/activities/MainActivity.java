@@ -395,7 +395,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isEmpty(TextInputEditText etText) {
-        return etText.getText().toString().trim().length() == 0;
+        return etText.getText().toString().trim().length() == 0 || Double.parseDouble(etText.getText().toString()) == 0;
     }
 
     private void update_save_button() {
