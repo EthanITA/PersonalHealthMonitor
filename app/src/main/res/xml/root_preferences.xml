@@ -1,0 +1,79 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <PreferenceCategory app:title="Personal Informations">
+
+        <EditTextPreference
+            app:key="name"
+            app:title="Your name"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            app:icon="@drawable/ic_sex"
+            app:key="gender"
+            app:summaryOff="Female"
+            app:summaryOn="Male"
+            app:title="Gender" />
+        <EditTextPreference
+            android:dialogLayout="@layout/layout_edit_text_number"
+            app:icon="@drawable/ic_age"
+            app:key="age"
+            app:title="Age"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        app:title="Monitoring thresholds">
+        <com.dong.personalhealthmonitor.java_classes.custom_xml_preferences.PreferenceToggleHeight
+            app:title="Height (cm)"
+            app:dialogLayout="@layout/layout_edit_text_decimal"
+            app:icon="@drawable/ic_height"
+            app:useSimpleSummaryProvider="true"
+            app:key="height_thresh"
+            app:widgetLayout="@layout/layout_height_threshold"
+            />
+        <com.dong.personalhealthmonitor.java_classes.custom_xml_preferences.PreferenceToggleWeight
+            app:title="Weight (Kg)"
+            app:dialogLayout="@layout/layout_edit_text_decimal"
+            app:icon="@drawable/ic_weight"
+            app:key="weight_thresh"
+            app:useSimpleSummaryProvider="true"
+            app:widgetLayout="@layout/layout_weight_threshold"
+            />
+        <com.dong.personalhealthmonitor.java_classes.custom_xml_preferences.PreferenceToggleTemperature
+            app:title="Temperature (°C)"
+            app:dialogLayout="@layout/layout_edit_text_decimal"
+            app:icon="@drawable/ic_thermometer"
+            app:useSimpleSummaryProvider="true"
+            app:widgetLayout="@layout/layout_temp_threshold"
+            app:key="temp_thresh"
+            />
+        <com.dong.personalhealthmonitor.java_classes.custom_xml_preferences.PreferenceToggleBlood1
+            app:title="1. Systolic (mm of mercury)"
+            app:dialogLayout="@layout/layout_edit_text_decimal"
+            app:icon="@drawable/ic_blood_pressure"
+            app:useSimpleSummaryProvider="true"
+            app:widgetLayout="@layout/layout_blood1_threshold"
+            app:key="blood1_thresh"
+            />
+        <com.dong.personalhealthmonitor.java_classes.custom_xml_preferences.PreferenceToggleBlood2
+            app:title="2. Diastolic (mm of mercury)"
+            app:dialogLayout="@layout/layout_edit_text_decimal"
+            app:icon="@drawable/ic_blood_pressure"
+            app:useSimpleSummaryProvider="true"
+            app:key="blood2_thresh"
+            app:widgetLayout="@layout/layout_blood2_threshold"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="App Settings">
+
+        <Preference
+            app:title="Notification"
+            app:icon="@drawable/ic_notification"
+            app:useSimpleSummaryProvider="true"
+            app:key="notification_time"
+            />
+
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.dong.personalhealthmonitor.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/HomeToStats"
+            app:destination="@id/StatsFragment" />
+        <action
+            android:id="@+id/HomeToDay"
+            app:destination="@id/DayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/StatsFragment"
+        android:name="com.dong.personalhealthmonitor.fragments.StatsCardFragment"
+        android:label="StatsFragment"
+        tools:layout="@layout/fragment_card_stats">
+
+    </fragment>
+    <fragment
+        android:id="@+id/DayFragment"
+        android:name="com.dong.personalhealthmonitor.fragments.DayCardFragment"
+        android:label="TodayFragment"
+        tools:layout="@layout/fragment_card_day">
+    </fragment>
+</navigation>

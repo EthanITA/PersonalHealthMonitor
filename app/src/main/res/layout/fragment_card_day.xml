@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DayCardFragment">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+            android:padding="8dp"
+            android:id="@+id/selected_day_fragment_card"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:text="DAY"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        style="@style/horizontal_divider"
+        app:cardBackgroundColor="@color/cardview_dark_background"/>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/refresh"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/list_cards"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

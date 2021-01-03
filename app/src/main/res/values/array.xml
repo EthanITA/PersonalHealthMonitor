@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="activity_entries">
+        <item>none</item>
+        <item>Sedentary: little or no exercise</item>
+        <item>Light: exercise 1–3 times/week</item>
+        <item>Moderate: exercise 4–5 times/week</item>
+        <item>Active: daily exercise or intense exercise 3–4 times/week</item>
+        <item>Very Active: intense exercise 6–7 times/week</item>
+        <item>Extra Active: very intense exercise daily, or physical job</item>
+    </string-array>
+    <array name="empty">
+        
+    </array>
+</resources>
